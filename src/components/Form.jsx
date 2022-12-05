@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addBook} from "../store/slices/books/booksSlice";
 import {Link} from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function Form() {
 
@@ -55,7 +56,7 @@ export default function Form() {
     }
 
     return (
-        <div className="">
+        <div>
             <Header/>
             <div className="flex flex-col items-center">
                 <h1 className="mt-10 font-black text-4xl">
@@ -71,7 +72,7 @@ export default function Form() {
                         onChange={inputChange}
                     />
                     <button
-                        className="bg-red-700 px-2 rounded-lg p-0.5"
+                        className="bg-red-700 px-2 rounded-lg p-0.5 text-white"
                         type="submit"
                     >Search
                     </button>
@@ -115,6 +116,8 @@ export default function Form() {
                     </div>
                 ))}
             </div>
+            <Footer/>
         </div>
+
     )
 }
