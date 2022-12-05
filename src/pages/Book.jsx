@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import Redes from "../components/Redes";
 import MenuFinal from "../components/MenuFinal";
 import {useState} from "react";
-import Footer from "../components/Footer";
 
 export default function Book() {
     const {bookId} = useParams()
@@ -93,7 +92,6 @@ export default function Book() {
                 <Redes/>
             </div>
             <MenuFinal newBook={newBook[0]}/>
-            <Footer/>
         </div>
     )
 }

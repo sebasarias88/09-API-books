@@ -8,7 +8,6 @@ export default function Login() {
             <button className="pl-8 py-4">
                 <Link to={'/'}>Back</Link>
             </button>
-            <h1>Hola soy un cambio</h1>
             <div className="flex justify-center items-center w-screen h-screen">
                 <div className="py-8 px-16 rounded-2xl text-center bg-gray-400/20 shadow-xl">
                     <h1 className="text-4xl mb-20">

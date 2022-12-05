@@ -1,10 +1,8 @@
 import Header from "../components/Header";
 import SearchBook from "../components/SearchBook";
-import Footer from "../components/Footer";
 import RenderBooks from "../components/RenderBooks";
 
 export default function Home() {
-
 
     return (
         <div className="flex flex-col items-center">
@@ -14,7 +12,6 @@ export default function Home() {
             </h1>
             <SearchBook/>
             <RenderBooks/>
-            <Footer/>
         </div>
     )
 }
