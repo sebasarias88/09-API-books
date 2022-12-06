@@ -49,10 +49,11 @@ export default function SearchBook() {
     }
 
     return (
-        <form className="relative" onSubmit={handleSubmit}>
+        <form className="relative"
+              onSubmit={handleSubmit}>
             <input
                 autoFocus={true}
-                className="rounded-lg  px-2 mr-6 p-0.5"
+                className="px-4 mr-6 py-2 w-80 outline-none bg-gray-50 rounded-2xl"
                 type="text"
                 placeholder="Write the book"
                 value={inputValue}
@@ -65,11 +66,11 @@ export default function SearchBook() {
             </button>
             {
                 inputValue &&
-                <div className="absolute top-full">
+                <div className="absolute bg-gray-100/90 backdrop-blur-sm shadow-2xl rounded-2xl w-80 h-80 overflow-y-scroll">
                     <ol className="text-center">
                         {
                             data && data.items && data.items.map(item => (
-                                <li className="flex mt-4 w-3/6"
+                                <li className="px-2 py-3 hover:bg-white hover:cursor-pointer text-left text-sm"
                                     key={item.id}
                                     onClick={() => handleSuggestionClick(item.id)}>
                                     {item.volumeInfo.title}

@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-export default function MenuFinal({newBook}){
+export default function BookReview({newBook}){
 
 
     return(

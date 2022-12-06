@@ -8,18 +8,18 @@ export default function Header() {
             <p className="text-4xl text-white">
                 BookLibrary
             </p>
-            <p className="cursor-pointer text-white ml-6">
-                <Link to={'/'}> Home</Link>
-            </p>
-            <p className="flex items-center cursor-pointer text-white">
-                Books<FiChevronDown/>
-            </p>
-            <p className="flex items-center cursor-pointer text-white">
-                Browse<FiChevronDown/>
-            </p>
-            <p className="flex items-center cursor-pointer text-white">
-                Ranking books<FiChevronDown/>
-            </p>
+                <p className="cursor-pointer text-white ml-10">
+                    <Link to={'/'}> Home</Link>
+                </p>
+                <p className="flex items-center cursor-pointer text-white">
+                    Books<FiChevronDown/>
+                </p>
+                <p className="flex items-center cursor-pointer text-white">
+                    Browse<FiChevronDown/>
+                </p>
+                <p className="flex items-center cursor-pointer text-white">
+                    Ranking books<FiChevronDown/>
+                </p>
             <button className="bg-white p-2 rounded-md text-sm hover:bg-gray-200">
                 <Link to={'/login'}>Sign Up</Link>
             </button>

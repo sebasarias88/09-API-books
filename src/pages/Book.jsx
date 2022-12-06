@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {AiFillStar} from 'react-icons/ai'
 import Header from "../components/Header";
 import Redes from "../components/Redes";
-import MenuFinal from "../components/MenuFinal";
+import BookReview from "../components/BookReview";
 import {useState} from "react";
 
 export default function Book() {
@@ -91,7 +91,7 @@ export default function Book() {
                 </div>
                 <Redes/>
             </div>
-            <MenuFinal newBook={newBook[0]}/>
+            <BookReview newBook={newBook[0]}/>
         </div>
     )
 }

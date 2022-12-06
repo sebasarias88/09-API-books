@@ -5,12 +5,12 @@ export default function RenderBooks(){
     const {books} = useSelector(state => state.books)
 
     return(
-        <div className="p-10 flex justify-center gap-4 flex-wrap w-screen ">
+        <div className="p-10 flex gap-4 flex-wrap w-screen">
             {books.map((book) => (
                 <div
-                    className="flex flex-col items-center bg-gray-400/20 rounded-lg p-10 w-3/12 hover:shadow-lg"
+                    className="flex flex-col items-center bg-gray-400/20 rounded-lg p-10 w-72 hover:shadow-lg"
                     key={book.id}>
-                    <img className="rounded-lg w-32 h-44 "
+                    <img className="rounded-lg w-32 h-44"
                          src={book.cover} alt="book image"
                     />
                     <h1 className="text-center text-xl font-bold mt-6">
