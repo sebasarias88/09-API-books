@@ -8,10 +8,13 @@ export const booksSLice = createSlice({
     reducers: {
         addBook: (state, action) => {
             state.books = [...state.books, action.payload]
+        },
+        clearBooks: (state) => {
+            state.books = []
         }
     },
 })
 
-export const { addBook } = booksSLice.actions
+export const { addBook, clearBooks } = booksSLice.actions
 
 export default booksSLice.reducer

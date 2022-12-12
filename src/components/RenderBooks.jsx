@@ -1,8 +1,27 @@
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {addBook, clearBooks} from "../store/slices/books/booksSlice";
 
 export default function RenderBooks(){
+
     const {books} = useSelector(state => state.books)
+
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        const storageBook = localStorage.getItem('books')
+        dispatch(clearBooks())
+        if(storageBook){
+            JSON.parse(storageBook).map((book) => {
+                dispatch(addBook(book))
+            })
+        }
+    }, [])
+
+    useEffect(()=>{
+        localStorage.setItem('books', JSON.stringify(books))
+    }, [books])
 
     return(
         <div className="p-10 flex gap-4 flex-wrap w-screen">
