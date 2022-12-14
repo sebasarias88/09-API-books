@@ -48,16 +48,20 @@ export default function Book() {
                     </p>
                     <h3 className="text-sm mt-4 mb-4 text-justify">
                         {
-                            description ?
-                                <p>{newBook[0].info.length < 445 ? newBook[0].info : newBook[0].info.substring(0, 445)}</p> :
+                            description
+                                ?
+                                <p>{newBook[0].info.length < 445
+                                    ? newBook[0].info
+                                    : newBook[0].info.substring(0, 445)}</p>
+                                :
                                 <p>{newBook[0].info}</p>
                         }
                         {
                             newBook[0].info.length > 445 &&
-                                <button className="text-green-900 hover:underline text-xs"
-                                        onClick={handleClick}>
-                                    {description ? "Read More..." : "Read Less"}
-                                </button>
+                            <button className="text-green-900 hover:underline text-xs"
+                                    onClick={handleClick}>
+                                {description ? "Read More..." : "Read Less"}
+                            </button>
                         }
 
                     </h3>

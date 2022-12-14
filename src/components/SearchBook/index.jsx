@@ -10,16 +10,18 @@ export default function SearchBook() {
 
     const handleSuggestionClick = (id) => {
         const current = data.items.filter(book => (book.id === id))
-        const currentBook = {
-            id: current[0].id,
-            title: current[0].volumeInfo.title,
-            author: current[0].volumeInfo.authors[0],
-            publishedDate: current[0].volumeInfo.publishedDate,
-            cover: current[0].volumeInfo.imageLinks.thumbnail,
-            info: current[0].volumeInfo.description,
-            page: current[0].volumeInfo.pageCount
+        if(!data){
+            alert("This book is not available")
         }
-        //setBooks([currentBook, ...books])
+        const currentBook = {
+            id: current[0].id ? current[0].id : "Is not available",
+            title: current[0].volumeInfo.title ? current[0].volumeInfo.title : "Is not available",
+            author: current[0].volumeInfo.authors ? current[0].volumeInfo.authors[0] : "The author is not available",
+            publishedDate: current[0].volumeInfo.publishedDate ? current[0].volumeInfo.publishedDate : "The published date is not available",
+            cover: current[0].volumeInfo.imageLinks ? current[0].volumeInfo.imageLinks.thumbnail : "https://cdn.imprentaonline.net/media/catalog/product/cache/af1f7de92a59ee4a26553b36df22c777/w/h/whatsapp_image_2021-01-27_at_11.49.48.jpeg",
+            info: current[0].volumeInfo.description ? current[0].volumeInfo.description : "The description is not available",
+            page: current[0].volumeInfo.pageCount ? current[0].volumeInfo.pageCount : "The pages is not available"
+        }
         dispatch(addBook(currentBook))
         setData([])
         setInputValue("")
@@ -66,14 +68,15 @@ export default function SearchBook() {
             </button>
             {
                 inputValue &&
-                <div className="absolute bg-gray-100/90 backdrop-blur-sm shadow-2xl rounded-2xl w-80 h-80 overflow-y-scroll">
+                <div
+                    className="absolute bg-gray-100/90 backdrop-blur-sm shadow-2xl rounded-2xl w-80 h-80 overflow-y-scroll">
                     <ol className="text-center">
                         {
                             data && data.items && data.items.map(item => (
                                 <li className="px-2 py-3 hover:bg-white hover:cursor-pointer text-left text-sm"
                                     key={item.id}
                                     onClick={() => handleSuggestionClick(item.id)}>
-                                    {item.volumeInfo.title}
+                                    <b>{item.volumeInfo.title}</b>
                                 </li>
                             ))}
                     </ol>
